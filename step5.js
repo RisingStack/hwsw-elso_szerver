@@ -32,11 +32,12 @@ const handler = (req, res) => {
 
 const server = http.createServer(handler);
 
-const listener = server.listen(port, (err) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
+const listener = server.listen(port, () => {
   const addr = listener.address();
   console.log(`Az alkalmazas a következő URL-en érhető el: http://localhost:${addr.port}`);
+});
+
+server.on('error', (err) => {
+  console.error(err);
+  process.exit(1);
 });

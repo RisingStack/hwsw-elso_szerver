@@ -17,7 +17,7 @@ app.use((err, req, res, next) => {
     return next(err);
   }
   res.status(500);
-  return res.end('OMG ERROR');
+  return res.end('ÚRISTEN HIBA TÖRTÉNT');
 });
 
 const listener = app.listen(port, (err) => {

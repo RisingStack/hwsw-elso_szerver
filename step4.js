@@ -16,11 +16,11 @@ const handler = (req, res) => {
 
 const server = http.createServer(handler);
 
-server.listen(port, (err) => {
-  if (err) {
-    console.error(err);
-    process.exit(1);
-  }
-
+server.listen(port, () => {
   console.log(`Az alkalmazas a következő URL-en érhető el: http://localhost:${port}`);
+});
+
+server.on('error', (err) => {
+  console.error(err);
+  process.exit(1);
 });

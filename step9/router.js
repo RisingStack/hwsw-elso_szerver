@@ -3,7 +3,7 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/error', () => {
-  throw new Error('OMG');
+  throw new Error('jaj ne :(');
 });
 
 router.get('/hello', (req, res) => {
