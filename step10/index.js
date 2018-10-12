@@ -7,7 +7,7 @@ const { port } = require('./config');
 
 const app = express();
 app.use(cors());
-app.use(bodyParser);
+app.use(bodyParser.json());
 app.use(helmet());
 
 app.use((req, res, next) => {
